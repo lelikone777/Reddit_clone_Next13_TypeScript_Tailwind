@@ -59,7 +59,7 @@ export const authOptions: NextAuthOptions = {
         name: dbUser.name,
         email: dbUser.email,
         picture: dbUser.image,
-        username: dbUser.username,
+        username: dbUser.name,
       };
     },
     redirect() {

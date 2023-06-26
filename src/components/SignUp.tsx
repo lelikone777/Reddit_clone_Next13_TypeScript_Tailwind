@@ -13,10 +13,10 @@ const SignUp = () => {
         </p>
       </div>
       <UserAuthForm />
-      <p className="px-8 text-center text-sm text-zinc-700">
-        Already a Bredit user?{" "}
+      <p className="px-8 text-center text-sm text-muted-foreground">
+        Already a Breadditor?{" "}
         <Link href="/sign-in" className="hover:text-brand text-sm underline underline-offset-4">
-          Sign In
+          Sign in
         </Link>
       </p>
     </div>

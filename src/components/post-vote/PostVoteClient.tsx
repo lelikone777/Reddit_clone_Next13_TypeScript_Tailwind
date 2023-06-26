@@ -1,8 +1,8 @@
 "use client";
 
+import { toast } from "../../hooks/use-toast";
 import { Button } from "../ui/Button";
-import { useCustomToasts } from "@/hooks/use-custom-toast";
-import { toast } from "@/hooks/use-toast";
+import { useCustomToasts } from "@/hooks/use-custom-toasts";
 import { cn } from "@/lib/utils";
 import { PostVoteRequest } from "@/lib/validators/vote";
 import { usePrevious } from "@mantine/hooks";

@@ -22,12 +22,12 @@ interface PostProps {
 }
 
 const Post: FC<PostProps> = ({
-                               post,
-                               votesAmt: _votesAmt,
-                               currentVote: _currentVote,
-                               subredditName,
-                               commentAmt,
-                             }) => {
+  post,
+  votesAmt: _votesAmt,
+  currentVote: _currentVote,
+  subredditName,
+  commentAmt,
+}) => {
   const pRef = useRef<HTMLParagraphElement>(null)
 
   return (
@@ -51,7 +51,7 @@ const Post: FC<PostProps> = ({
                 <span className='px-1'>•</span>
               </>
             ) : null}
-            <span>Posted by u/{post.author.username}</span>{' '}
+            <span>Posted by u/ {post.author.name}</span>{' '}
             {formatTimeToNow(new Date(post.createdAt))}
           </div>
           <a href={`/r/${subredditName}/post/${post.id}`}>

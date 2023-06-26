@@ -1,15 +1,14 @@
-import { Icons } from "./Icons";
+import { Icons } from "@/components/Icons";
 import { Avatar, AvatarFallback } from "@/components/ui/Avatar";
+import { User } from "@prisma/client";
 import { AvatarProps } from "@radix-ui/react-avatar";
-import { User } from "next-auth";
 import Image from "next/image";
-import { FC } from "react";
 
 interface UserAvatarProps extends AvatarProps {
-  user: Pick<User, "name" | "image">;
+  user: Pick<User, "image" | "name">;
 }
 
-const UserAvatar: FC<UserAvatarProps> = ({ user, ...props }) => {
+export function UserAvatar({ user, ...props }: UserAvatarProps) {
   return (
     <Avatar {...props}>
       {user.image ? (
@@ -24,6 +23,4 @@ const UserAvatar: FC<UserAvatarProps> = ({ user, ...props }) => {
       )}
     </Avatar>
   );
-};
-
-export default UserAvatar;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import UserAvatar from "@/components/UserAvatar";
+import { UserAvatar } from "./UserAvatar";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Image as ImageIcon, Link2 } from "lucide-react";

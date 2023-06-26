@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { useCustomToasts } from "@/hooks/use-custom-toast";
+import { useCustomToasts } from "@/hooks/use-custom-toasts";
 import { useToast } from "@/hooks/use-toast";
 import { SubscribeToSubredditPayload } from "@/lib/validators/subreddit";
 import { useMutation } from "@tanstack/react-query";

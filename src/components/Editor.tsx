@@ -1,7 +1,7 @@
 "use client";
 
 import { toast } from "@/hooks/use-toast";
-import { uploadFiles } from "@/lib/uploadthings";
+import { uploadFiles } from "@/lib/uploadthing";
 import { PostCreationRequest, PostValidator } from "@/lib/validators/post";
 import "@/styles/editor.css";
 import EditorJS from "@editorjs/editorjs";

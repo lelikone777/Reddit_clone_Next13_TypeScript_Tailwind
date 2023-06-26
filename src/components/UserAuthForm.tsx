@@ -5,24 +5,23 @@ import { Button } from "@/components/ui/Button";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { signIn } from "next-auth/react";
-import React, { FC, useState } from "react";
+import * as React from "react";
+import { FC } from "react";
 
-interface UserAuthFormProps extends React.HtmlHTMLAttributes<HTMLDivElement> {}
+interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   const loginWithGoogle = async () => {
     setIsLoading(true);
 
     try {
-      // throw new Error();
       await signIn("google");
     } catch (error) {
-      // toast notification
       toast({
-        title: "There was a problem.",
+        title: "Error",
         description: "There was an error logging in with Google",
         variant: "destructive",
       });
@@ -33,7 +32,14 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
 
   return (
     <div className={cn("flex justify-center", className)} {...props}>
-      <Button onClick={loginWithGoogle} isLoading={isLoading} size="sm" className="w-full">
+      <Button
+        isLoading={isLoading}
+        type="button"
+        size="sm"
+        className="w-full"
+        onClick={loginWithGoogle}
+        disabled={isLoading}
+      >
         {isLoading ? null : <Icons.google className="h-4 w-4 mr-2" />}
         Google
       </Button>
